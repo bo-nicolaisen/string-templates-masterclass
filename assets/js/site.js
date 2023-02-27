@@ -17,25 +17,51 @@ const myData = {
 
 
 // controller code
-setupStory('uk');
+
 
 let myLanguage = 'uk';
 let myTextData = null;
 
+
 let mySelectionElement = document.getElementById('lang');
 
-mySelectionElement?.addEventListener('change', (e) => {
+mySelectionElement.addEventListener('change', (e) => {
     let myChoice = mySelectionElement.value;
+    console.log(myTextData);
+
     setupStory(myChoice);
 });
 
 
 
 function setupStory(myLanguage) {
+    // evaluer bruger input.
+    console.log(myLanguage);
 
-    console.log(myLanguage)
+    switch (myLanguage) {
+        case 'uk':
+            myTextData = myData.uk;
 
-    //showStory(myTextData);
+            break;
+        case 'dk':
+            myTextData = myData.dk;
+
+            break;
+        case 'se':
+            myTextData = myData.se;
+
+            break;
+
+        default:
+
+            break;
+    }
+
+    console.log(myTextData);
+
+
+    let myTextData = 'test';
+    showStory(myTextData);
 }
 
 
@@ -43,7 +69,7 @@ function setupStory(myLanguage) {
 
 function showStory(myTextData) {
 
-    let myHTML = `<h2>${myTextData.headline}</h2><p>${myTextData.text}</p>`;
+    let myHTML = 'test';
     let myElement = document.getElementById('app');
     myElement.innerHTML = myHTML;
 
