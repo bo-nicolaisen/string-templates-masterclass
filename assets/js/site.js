@@ -15,6 +15,10 @@ const myData = {
 
 
 
+
+// controller code
+setupStory('uk');
+
 let myLanguage = 'uk';
 let myTextData = null;
 
@@ -29,33 +33,20 @@ mySelectionElement?.addEventListener('change', (e) => {
 
 function setupStory(myLanguage) {
 
-    console.log(myLanguage);
-    switch (myLanguage) {
-        case 'uk':
-            myTextData = myData.uk;
-            break;
+    console.log(myLanguage)
 
-        case 'se':
-            myTextData = myData.se;
-            break;
+    //showStory(myTextData);
+}
 
-        case 'dk':
-            myTextData = myData.dk;
-            break;
 
-        default:
-            myTextData = {
-                headline: "sprog findes ikke",
-                text: "vælg et andet"
-            };
-            break;
-    }
+// view code
+
+function showStory(myTextData) {
 
     let myHTML = `<h2>${myTextData.headline}</h2><p>${myTextData.text}</p>`;
-
     let myElement = document.getElementById('app');
-
     myElement.innerHTML = myHTML;
+
 }
 
 
